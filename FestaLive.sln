@@ -3,7 +3,49 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestaLive.Entities", "FestaLive.Entities\FestaLive.Entities.csproj", "{2533AC94-2F27-4096-94D6-3DBCF904E86A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestaLive.DataAccess", "FestaLive.DataAccess\FestaLive.DataAccess.csproj", "{EAF8E345-32E2-430A-A196-04758F1CE1AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestaLive.Core", "FestaLive.Core\FestaLive.Core.csproj", "{33080B67-1914-454E-9342-C72CE897100B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestaLive.Business", "FestaLive.Business\FestaLive.Business.csproj", "{661D780C-B50E-4C56-840F-6A7B8E756074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestaLive.WebAPI", "FestaLive.WebAPI\FestaLive.WebAPI.csproj", "{A1953133-D6DE-41CD-AF20-AAD6CB6D7C2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestaLive.WebUI", "FestaLive.WebUI\FestaLive.WebUI.csproj", "{62E8F468-3142-4364-8F3C-D756AF82EA77}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2533AC94-2F27-4096-94D6-3DBCF904E86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2533AC94-2F27-4096-94D6-3DBCF904E86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2533AC94-2F27-4096-94D6-3DBCF904E86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2533AC94-2F27-4096-94D6-3DBCF904E86A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF8E345-32E2-430A-A196-04758F1CE1AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF8E345-32E2-430A-A196-04758F1CE1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF8E345-32E2-430A-A196-04758F1CE1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF8E345-32E2-430A-A196-04758F1CE1AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33080B67-1914-454E-9342-C72CE897100B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33080B67-1914-454E-9342-C72CE897100B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33080B67-1914-454E-9342-C72CE897100B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33080B67-1914-454E-9342-C72CE897100B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661D780C-B50E-4C56-840F-6A7B8E756074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661D780C-B50E-4C56-840F-6A7B8E756074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661D780C-B50E-4C56-840F-6A7B8E756074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661D780C-B50E-4C56-840F-6A7B8E756074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1953133-D6DE-41CD-AF20-AAD6CB6D7C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1953133-D6DE-41CD-AF20-AAD6CB6D7C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1953133-D6DE-41CD-AF20-AAD6CB6D7C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1953133-D6DE-41CD-AF20-AAD6CB6D7C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62E8F468-3142-4364-8F3C-D756AF82EA77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E8F468-3142-4364-8F3C-D756AF82EA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E8F468-3142-4364-8F3C-D756AF82EA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E8F468-3142-4364-8F3C-D756AF82EA77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
