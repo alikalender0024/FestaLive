@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Admin\.github\workflows\main.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FestaLive.WebAPI\FestaLive.WebAPI.csproj" />
   </ItemGroup>
 
