@@ -1,0 +1,78 @@
+﻿@model List<About>
+
+@{
+    ViewData["Title"] = "About List";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin Paneli</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Hakkımda Listele</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                    <a href="/About/CreateAbout" class="btn btn-sm btn-success">Yeni Hakkımda Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-0">About Listesi</h3>
+        </div>
+        <div class="card-body">
+            <div class="card-sub">
+                Hakkımda ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+                <hr />
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col">Açıklama</th>
+                            <th scope="col">Alt Başlık</th>
+                            <th scope="col">Parti Açıklama</th>
+                            <th scope="col">İkon URL</th>
+                            <th scope="col">Anlık Başlık</th>
+                            <th scope="col">Anlık Açıklama</th>
+                            <th scope="col">Sil</th>
+                            <th scope="col">Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var about in Model)
+                        {
+                            <tr>
+                                <td>@about.Id</td>
+                                <td>@about.Title</td>
+                                <td>@about.Description</td>
+                                <td>@about.Subtitle</td>
+                                <td>@about.PartyDescription</td>
+                                <td>@about.IconUrl</td>
+                                <td>@about.MomentTitle</td>
+                                <td>@about.MomentDescription</td>
+                                <td><a href="/About/DeleteAbout/@about.Id" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/About/UpdateAbout/@about.Id" class="btn btn-warning">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="mt-4">
+                    <a href="/About/CreateAbout" class="btn btn-success">Yeni Hakkımda Ekle</a>
+                </div>
+        </div>
+    </div>
+</div>

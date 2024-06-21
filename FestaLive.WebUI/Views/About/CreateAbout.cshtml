@@ -1,0 +1,52 @@
+﻿@model About
+
+@{
+    ViewData["Title"] = "Hakkımda Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Yeni Hakkımda Ekle
+                </div>
+                <div class="card-body">
+                    <form asp-action="CreateAbout" method="post">
+                        <div class="form-group">
+                            <label for="Title">Başlık</label>
+                            <input type="text" class="form-control" id="Title" name="Title" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Description">Açıklama</label>
+                            <textarea class="form-control" id="Description" name="Description" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="Subtitle">Alt Başlık</label>
+                            <input type="text" class="form-control" id="Subtitle" name="Subtitle" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="PartyDescription">Parti Açıklama</label>
+                            <textarea class="form-control" id="PartyDescription" name="PartyDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="IconUrl">İkon URL</label>
+                            <input type="text" class="form-control" id="IconUrl" name="IconUrl" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="MomentTitle">Anlık Başlık</label>
+                            <input type="text" class="form-control" id="MomentTitle" name="MomentTitle" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="MomentDescription">Anlık Açıklama</label>
+                            <textarea class="form-control" id="MomentDescription" name="MomentDescription" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+                        <a href="@Url.Action("AboutList", "About")" class="btn btn-secondary mt-3">İptal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,6 +15,9 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<AboutManager>().As<IAboutService>().SingleInstance();
+            builder.RegisterType<EfAboutDal>().As<IAboutDal>().SingleInstance();
+
             builder.RegisterType<ArtistManager>().As<IArtistService>().SingleInstance();
             builder.RegisterType<EfArtistDal>().As<IArtistDal>().SingleInstance();
         }
