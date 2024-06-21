@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+
+@await Component.InvokeAsync("DefaultHeadComponentPartial")
+
+<body>
+
+    <main>
+
+        @await Component.InvokeAsync("DefaultHeaderComponentPartial")
+
+        @await Component.InvokeAsync("DefaultNavbarComponentPartial")
+
+        @await Component.InvokeAsync("DefaultFeatureComponentPartial")
+
+        @await Component.InvokeAsync("DefaultAboutComponentPartial")
+
+        @await Component.InvokeAsync("DefaultArtistComponentPartial")
+
+        @await Component.InvokeAsync("DefaultCalendarComponentPartial")
+
+        @await Component.InvokeAsync("DefaultPlanComponentPartial")
+
+        @await Component.InvokeAsync("DefaultContactFormComponentPartial")
+
+    </main>
+
+    @await Component.InvokeAsync("DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("DefaultScriptComponentPartial")
+
+</body>
+
+</html>
