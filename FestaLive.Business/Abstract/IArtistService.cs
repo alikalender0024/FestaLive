@@ -11,7 +11,7 @@ namespace FestaLive.Business.Abstract
     public interface IArtistService
     {
         IResult Add(Artist artist);
-        IResult Delete(Artist artist);
+        IResult Delete(int artistId);
         IResult Update(Artist artist);
         IDataResult<Artist> GetById(int artistId);
         IDataResult<List<Artist>> GetAll();

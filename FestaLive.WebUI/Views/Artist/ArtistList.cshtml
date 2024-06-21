@@ -1,0 +1,73 @@
+﻿@model List<Artist>
+
+@{
+    ViewData["Title"] = "Sanatçı Listesi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin Paneli</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Sanatçı Listesi</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                    <a href="/Artist/CreateArtist" class="btn btn-sm btn-success">Yeni Sanatçı Ekle</a>
+                    <a href="#" class="btn btn-sm btn-neutral">Sanatçıları Filtrele</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-0">Sanatçılar</h3>
+        </div>
+        <div class="card-body">
+            <div class="card-sub">
+                Sanatçılar ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Ad</th>
+                            <th scope="col">Doğum Tarihi</th>
+                            <th scope="col">Müzik Tipi</th>
+                            <th scope="col">Resim Yolu</th>
+                            <th scope="col">Youtube Kanalı</th>
+                            <th scope="col">Sil</th>
+                            <th scope="col">Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Birthdate.ToShortDateString()</td>
+                                <td>@item.MusicGenre</td>
+                                <td>@item.ImageUrl</td>
+                                <td>@item.YoutubeChannel</td>
+                                <td><a href="/Artist/DeleteArtist/@item.Id" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/Artist/UpdateArtist/@item.Id" class="btn btn-warning">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <a href="/Artist/CreateArtist" class="btn btn-success">Yeni Sanatçı Ekle</a>
+        </div>
+    </div>
+</div>

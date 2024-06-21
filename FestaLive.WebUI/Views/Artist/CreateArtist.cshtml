@@ -1,0 +1,44 @@
+﻿@model Artist
+
+@{
+    ViewData["Title"] = "Sanatçı Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Yeni Sanatçı Ekle
+                </div>
+                <div class="card-body">
+                    <form asp-action="CreateArtist" method="post">
+                        <div class="form-group">
+                            <label for="Name">Ad</label>
+                            <input type="text" class="form-control" id="Name" name="Name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Birthdate">Doğum Tarihi</label>
+                            <input type="date" class="form-control" id="Birthdate" name="Birthdate" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="MusicGenre">Müzik Tipi</label>
+                            <input type="text" class="form-control" id="MusicGenre" name="MusicGenre" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="ImageUrl">Resim Yolu</label>
+                            <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="YoutubeChannel">Youtube Kanalı</label>
+                            <input type="text" class="form-control" id="YoutubeChannel" name="YoutubeChannel" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+                        <a href="@Url.Action("ArtistList", "Artist")" class="btn btn-secondary mt-3">İptal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

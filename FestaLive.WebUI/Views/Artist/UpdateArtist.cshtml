@@ -1,0 +1,46 @@
+﻿@model Artist
+
+@{
+    ViewData["Title"] = "Sanatçı Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Sanatçı Güncelle
+                </div>
+                <div class="card-body">
+                    <form asp-action="UpdateArtist" method="post" id="updateArtistForm">
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="form-group">
+                            <label for="Name">Ad</label>
+                            <input type="text" class="form-control" id="Name" name="Name" asp-for="Name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Birthdate">Doğum Tarihi</label>
+                            <input type="date" class="form-control" id="Birthdate" name="Birthdate" asp-for="Birthdate" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="MusicGenre">Müzik Tipi</label>
+                            <input type="text" class="form-control" id="MusicGenre" name="MusicGenre" asp-for="MusicGenre" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="ImageUrl">Resim Yolu</label>
+                            <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" asp-for="ImageUrl" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="YoutubeChannel">Youtube Kanalı</label>
+                            <input type="text" class="form-control" id="YoutubeChannel" name="YoutubeChannel" asp-for="YoutubeChannel" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+                        <a href="@Url.Action("ArtistList", "Artist")" class="btn btn-secondary mt-3">İptal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

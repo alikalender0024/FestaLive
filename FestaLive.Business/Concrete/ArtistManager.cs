@@ -23,9 +23,10 @@ namespace FestaLive.Business.Concrete
             return new SuccessResult(ArtistMessages.ArtistAddedSuccessfully);
         }
 
-        public IResult Delete(Artist artist)
+        public IResult Delete(int artistId)
         {
-            _artistDal.Delete(artist);
+            var deletedEntity = GetById(artistId);
+            _artistDal.Delete(deletedEntity.Data);
             return new SuccessResult(ArtistMessages.ArtistDeletedSuccessfully);
         }
 
