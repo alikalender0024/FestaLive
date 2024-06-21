@@ -1,0 +1,31 @@
+﻿@model Artist
+
+@{
+    ViewData["Title"] = "FilterArtists";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form asp-controller="Artist" asp-action="FilterArtists" method="get" id="filterForm">
+    <div class="form-row align-items-end">
+        <div class="form-group col-md-3">
+            <label for="name">Adı</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="birthdate">Doğum Tarihi</label>
+            <input type="date" class="form-control" id="birthdate" name="birthdate">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="musicGenre">Müzik Türü</label>
+            <input type="text" class="form-control" id="musicGenre" name="musicGenre">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="youtubeChannel">Youtube Kanalı</label>
+            <input type="text" class="form-control" id="youtubeChannel" name="youtubeChannel">
+        </div>
+        <div class="form-group col-md-2">
+            <button type="submit" class="btn btn-primary btn-block">Filtrele</button>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,90 @@
+﻿@model List<Artist>
+
+@{
+    ViewData["Title"] = "Sanatçı Listesi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin Paneli</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Sanatçı Filtrele</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                    <a href="/Artist/CreateArtist" class="btn btn-sm btn-success">Yeni Sanatçı Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="card">
+        <div class="card-header">
+            <h2>Sanatçı Listesi</h2>
+            <hr />
+            <form asp-controller="Artist" asp-action="FilterList" method="get" id="filterForm">
+                <div class="form-row align-items-end">
+                    <div class="form-group col-md-3">
+                        <label for="name">Adı</label>
+                        <input type="text" class="form-control" id="name" name="name" value="@ViewBag.Name">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="birthdate">Doğum Tarihi</label>
+                        <input type="date" class="form-control" id="birthdate" name="birthdate" value="@ViewBag.Birthdate">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="musicGenre">Müzik Türü</label>
+                        <input type="text" class="form-control" id="musicGenre" name="musicGenre" value="@ViewBag.MusicGenre">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="youtubeChannel">Youtube Kanalı</label>
+                        <input type="text" class="form-control" id="youtubeChannel" name="youtubeChannel" value="@ViewBag.YoutubeChannel">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <button type="submit" class="btn btn-primary btn-block">Filtrele</button>
+                    </div>
+                </div>
+            </form>
+            <hr />
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Ad</th>
+                            <th scope="col">Doğum Tarihi</th>
+                            <th scope="col">Müzik Türü</th>
+                            <th scope="col">Youtube Kanalı</th>
+                            <th scope="col">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var artist in Model)
+                        {
+                            <tr>
+                                <th scope="row">@artist.Id</th>
+                                <td>@artist.Name</td>
+                                <td>@(artist.Birthdate != null ? artist.Birthdate.ToShortDateString() : "-")</td>
+                                <td>@artist.MusicGenre</td>
+                                <td>@artist.YoutubeChannel</td>
+                                <td>
+                                    <a href="@Url.Action("UpdateArtist", "Artist", new { id = artist.Id })" class="btn btn-sm btn-success">Güncelle</a>
+                                    <a href="@Url.Action("DeleteArtist", "Artist", new { id = artist.Id })" class="btn btn-sm btn-danger">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

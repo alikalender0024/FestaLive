@@ -30,6 +30,13 @@ namespace FestaLive.Business.Concrete
             return new SuccessResult(ArtistMessages.ArtistDeletedSuccessfully);
         }
 
+        public IDataResult<List<Artist>> FilterArtists(string? name, DateTime? birthdate, string? musicGenre, string? youtubeChannel)
+        {
+            var filteredArtists = _artistDal.FilterArtists(name, birthdate, musicGenre, youtubeChannel);
+            return new SuccessDataResult<List<Artist>>(filteredArtists);
+
+        }
+
         public IDataResult<List<Artist>> GetAll()
         {
             var artists = _artistDal.GetAll();

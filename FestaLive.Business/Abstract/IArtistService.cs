@@ -15,5 +15,6 @@ namespace FestaLive.Business.Abstract
         IResult Update(Artist artist);
         IDataResult<Artist> GetById(int artistId);
         IDataResult<List<Artist>> GetAll();
+        IDataResult<List<Artist>> FilterArtists(string? name,DateTime? birthdate,string? musicGenre,string? youtubeChannel);
     }
 }

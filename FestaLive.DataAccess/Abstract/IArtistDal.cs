@@ -10,5 +10,6 @@ namespace FestaLive.DataAccess.Abstract
 {
     public interface IArtistDal : IEntityRepository<Artist>
     {
+        List<Artist> FilterArtists(string name, DateTime? birthdate, string musicGenre, string youtubeChannel);
     }
 }

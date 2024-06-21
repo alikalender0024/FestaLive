@@ -44,5 +44,19 @@ namespace FestaLive.WebUI.Controllers
             _artistService.Update(artist);
             return RedirectToAction("ArtistList");
         }
+
+        [HttpGet]
+        public IActionResult FilterArtists(string? name, DateTime? birthdate, string? musicGenre, string? youtubeChannel)
+        {
+            return RedirectToAction("Index", new { name, birthdate, musicGenre, youtubeChannel });
+        }
+
+        [HttpGet]
+        public IActionResult FilterList(string name, DateTime? birthdate, string musicGenre, string youtubeChannel)
+        {
+            var filteredArtists = _artistService.FilterArtists(name, birthdate, musicGenre, youtubeChannel);
+            return View(filteredArtists.Data);
+        }
+
     }
 }
