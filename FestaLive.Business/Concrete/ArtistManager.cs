@@ -1,4 +1,5 @@
 ﻿using FestaLive.Business.Abstract;
+using FestaLive.Business.Constants.Messages;
 using FestaLive.Core.Utilities.Results;
 using FestaLive.DataAccess.Abstract;
 using FestaLive.Entities.Concrete;
@@ -19,13 +20,13 @@ namespace FestaLive.Business.Concrete
         public IResult Add(Artist artist)
         {
             _artistDal.Add(artist);
-            return new SuccessResult("Artist added successfully");
+            return new SuccessResult(ArtistMessages.ArtistAddedSuccessfully);
         }
 
         public IResult Delete(Artist artist)
         {
             _artistDal.Delete(artist);
-            return new SuccessResult("Artist deleted successfully");
+            return new SuccessResult(ArtistMessages.ArtistDeletedSuccessfully);
         }
 
         public IDataResult<List<Artist>> GetAll()
@@ -41,13 +42,13 @@ namespace FestaLive.Business.Concrete
             {
                 return new SuccessDataResult<Artist>(artist);
             }
-            return new ErrorDataResult<Artist>("Artist not found");
+            return new ErrorDataResult<Artist>(ArtistMessages.ArtistNotFound);
         }
 
         public IResult Update(Artist artist)
         {
             _artistDal.Update(artist);
-            return new SuccessResult("Artist updated successfully");
+            return new SuccessResult(ArtistMessages.ArtistUpdatedSuccessfully);
         }
     }
 }
