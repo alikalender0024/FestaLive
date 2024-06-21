@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class TicketManager : ITicketService
+    public class TicketManager(ITicketDal ticketDal) : ITicketService
     {
-        private readonly ITicketDal _ticketDal;
-
-        public TicketManager(ITicketDal ticketDal)
-        {
-            _ticketDal = ticketDal;
-        }
+        private readonly ITicketDal _ticketDal = ticketDal;
 
         public IResult Add(Ticket ticket)
         {

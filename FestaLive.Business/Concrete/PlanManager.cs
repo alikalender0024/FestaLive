@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class PlanManager : IPlanService
+    public class PlanManager(IPlanDal planDal) : IPlanService
     {
-        private readonly IPlanDal _planDal;
-
-        public PlanManager(IPlanDal planDal)
-        {
-            _planDal = planDal;
-        }
+        private readonly IPlanDal _planDal = planDal;
 
         public IResult Add(Plan plan)
         {

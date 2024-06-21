@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class AboutManager : IAboutService
+    public class AboutManager(IAboutDal aboutDal) : IAboutService
     {
-        private readonly IAboutDal _aboutDal;
-
-        public AboutManager(IAboutDal aboutDal)
-        {
-            _aboutDal = aboutDal;
-        }
+        private readonly IAboutDal _aboutDal = aboutDal;
 
         public IResult Add(About about)
         {

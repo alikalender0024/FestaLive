@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class SocialMediaManager : ISocialMediaService
+    public class SocialMediaManager(ISocialMediaDal socialMediaDal) : ISocialMediaService
     {
-        private readonly ISocialMediaDal _socialMediaDal;
-
-        public SocialMediaManager(ISocialMediaDal socialMediaDal)
-        {
-            _socialMediaDal = socialMediaDal;
-        }
+        private readonly ISocialMediaDal _socialMediaDal = socialMediaDal;
 
         public IResult Add(SocialMedia socialMedia)
         {

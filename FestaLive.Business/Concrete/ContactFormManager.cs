@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class ContactFormManager : IContactFormService
+    public class ContactFormManager(IContactFormDal contactFormDal) : IContactFormService
     {
-        private readonly IContactFormDal _contactFormDal;
-
-        public ContactFormManager(IContactFormDal contactFormDal)
-        {
-            _contactFormDal = contactFormDal;
-        }
+        private readonly IContactFormDal _contactFormDal = contactFormDal;
 
         public IResult Add(ContactForm contactForm)
         {

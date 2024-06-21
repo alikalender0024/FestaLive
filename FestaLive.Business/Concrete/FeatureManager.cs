@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class FeatureManager : IFeatureService
+    public class FeatureManager(IFeatureDal featureDal) : IFeatureService
     {
-        private readonly IFeatureDal _featureDal;
-
-        public FeatureManager(IFeatureDal featureDal)
-        {
-            _featureDal = featureDal;
-        }
+        private readonly IFeatureDal _featureDal = featureDal;
 
         public IResult Add(Feature feature)
         {

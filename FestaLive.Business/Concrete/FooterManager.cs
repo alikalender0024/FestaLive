@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class FooterManager : IFooterService
+    public class FooterManager(IFooterDal footerDal) : IFooterService
     {
-        private readonly IFooterDal _footerDal;
-
-        public FooterManager(IFooterDal footerDal)
-        {
-            _footerDal = footerDal;
-        }
+        private readonly IFooterDal _footerDal = footerDal;
 
         public IResult Add(Footer footer)
         {

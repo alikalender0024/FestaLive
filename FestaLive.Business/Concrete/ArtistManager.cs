@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class ArtistManager : IArtistService
+    public class ArtistManager(IArtistDal artistDal) : IArtistService
     {
-        private readonly IArtistDal _artistDal;
-
-        public ArtistManager(IArtistDal artistDal)
-        {
-            _artistDal = artistDal;
-        }
+        private readonly IArtistDal _artistDal = artistDal;
 
         public IResult Add(Artist artist)
         {

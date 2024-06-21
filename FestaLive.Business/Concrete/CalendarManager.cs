@@ -8,14 +8,9 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
-    public class CalendarManager : ICalendarService
+    public class CalendarManager(ICalendarDal calendarDal) : ICalendarService
     {
-        private readonly ICalendarDal _calendarDal;
-
-        public CalendarManager(ICalendarDal calendarDal)
-        {
-            _calendarDal = calendarDal;
-        }
+        private readonly ICalendarDal _calendarDal = calendarDal;
 
         public IResult Add(Calendar calendar)
         {
