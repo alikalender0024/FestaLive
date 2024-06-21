@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FestaLive.Core.DataAccess.Abstract
+namespace FestaLive.Core.Entities.Abstarct
 {
     public interface IEntity
     {
