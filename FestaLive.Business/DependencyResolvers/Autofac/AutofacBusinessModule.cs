@@ -20,6 +20,14 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
 
             builder.RegisterType<ArtistManager>().As<IArtistService>().SingleInstance();
             builder.RegisterType<EfArtistDal>().As<IArtistDal>().SingleInstance();
+
+            builder.RegisterType<CalendarManager>().As<ICalendarService>().SingleInstance();
+            builder.RegisterType<EfCalendarDal>().As<ICalendarDal>().SingleInstance();
+
+
+            builder.RegisterType<EventManager>().As<IEventService>().SingleInstance();
+            builder.RegisterType<EfEventDal>().As<IEventDal>().SingleInstance();
+
         }
     }
 }
