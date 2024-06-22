@@ -28,6 +28,9 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
             builder.RegisterType<EventManager>().As<IEventService>().SingleInstance();
             builder.RegisterType<EfEventDal>().As<IEventDal>().SingleInstance();
 
+            builder.RegisterType<FooterManager>().As<IFooterService>().SingleInstance();
+            builder.RegisterType<EfFooterDal>().As<IFooterDal>().SingleInstance();
+
         }
     }
 }
