@@ -1,0 +1,68 @@
+﻿@model Plan
+
+@{
+    ViewData["Title"] = "UpdatePlan";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Plan Güncelle
+                </div>
+                <div class="card-body">
+                    <form asp-action="UpdatePlan" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label for="Title">Başlık</label>
+                            <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Price">Fiyat</label>
+                            <input type="number" class="form-control" id="Price" name="Price" value="@Model.Price" step="0.01" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Description">Açıklama</label>
+                            <textarea class="form-control" id="Description" name="Description" rows="3" required>@Model.Description</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="DiscountRate">İndirim Oranı (%)</label>
+                            <input type="number" class="form-control" id="DiscountRate" name="DiscountRate" value="@Model.DiscountRate" step="0.01" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Features">Özellikler</label>
+                            <textarea class="form-control" id="Features" name="Features" rows="5" placeholder="Her özelliği yeni bir satıra yazınız">
+                                @foreach (var feature in Model.Features)
+                                {
+                                    @feature
+                                    @Html.Raw(Environment.NewLine)
+                                }
+                            </textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">Güncelle</button>
+                        <a href="@Url.Action("PlanList", "Plan")" class="btn btn-secondary mt-3">İptal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        // Metin kutusundan özellikleri ayırıp JSON formatına çevirme
+        function prepareFeatures() {
+            var featuresTextArea = document.getElementById("Features");
+            var featuresArray = featuresTextArea.value.split(/\r?\n/).filter(Boolean);
+            featuresTextArea.value = JSON.stringify(featuresArray);
+        }
+
+        // Form submit olduğunda özellikleri düzenle
+        document.querySelector("form").addEventListener("submit", prepareFeatures);
+    </script>
+}

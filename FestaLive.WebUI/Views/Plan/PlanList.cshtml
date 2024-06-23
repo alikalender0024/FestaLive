@@ -1,0 +1,82 @@
+﻿@model List<Plan>
+
+@{
+    ViewData["Title"] = "PlanList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin Paneli</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Plan Listesi</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                    <a href="/Plan/CreatePlan" class="btn btn-sm btn-success">Yeni Plan Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-0">Plan Listesi</h3>
+        </div>
+        <div class="card-body">
+            <div class="card-sub">
+                Planlar ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+                <hr />
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col">Fiyat</th>
+                            <th scope="col">Açıklama</th>
+                            <th scope="col">İndirim Oranı</th>
+                            <th scope="col">Özellikler</th>
+                            <th scope="col">Sil</th>
+                            <th scope="col">Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var plan in Model)
+                        {
+                            <tr>
+                                <td>@plan.Id</td>
+                                <td>@plan.Title</td>
+                                <td>&#8378;@plan.Price</td>
+                                <td>@plan.Description</td>
+                                <td>@plan.DiscountRate%</td>
+                                <td>
+                                    <ul>
+                                        @foreach (var feature in plan.Features)
+                                        {
+                                            <li>@feature</li>
+                                        }
+                                    </ul>
+                                </td>
+                                <td><a href="/Plan/DeletePlan/@plan.Id" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/Plan/UpdatePlan/@plan.Id" class="btn btn-warning">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="mt-4">
+                    <a href="/Plan/CreatePlan" class="btn btn-success">Yeni Plan Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
