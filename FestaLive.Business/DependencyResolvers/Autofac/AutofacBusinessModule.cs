@@ -24,6 +24,8 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
             builder.RegisterType<CalendarManager>().As<ICalendarService>().SingleInstance();
             builder.RegisterType<EfCalendarDal>().As<ICalendarDal>().SingleInstance();
 
+            builder.RegisterType<ContactFormManager>().As<IContactFormService>().SingleInstance();
+            builder.RegisterType<EfContactFormDal>().As<IContactFormDal>().SingleInstance();
 
             builder.RegisterType<EventManager>().As<IEventService>().SingleInstance();
             builder.RegisterType<EfEventDal>().As<IEventDal>().SingleInstance();
