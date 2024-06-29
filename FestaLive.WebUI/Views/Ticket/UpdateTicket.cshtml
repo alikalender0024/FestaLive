@@ -1,0 +1,79 @@
+﻿@model Ticket
+
+@{
+    ViewData["Title"] = "Bilet Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin Paneli</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Bilet Güncelle</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                    <a href="/Ticket/TicketList" class="btn btn-sm btn-primary">Bilet Listesi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-0">Bilet Bilgileri</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Ad Soyad</label>
+                    <input type="text" class="form-control" id="fullName" name="FullName" asp-for="FullName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-posta</label>
+                    <input type="email" class="form-control" id="email" name="Email" asp-for="Email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Telefon</label>
+                    <input type="text" class="form-control" id="phone" name="Phone" asp-for="Phone" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ticketType" class="form-label">Bilet Türü</label>
+                    <select class="form-control" id="ticketType" name="TicketType" asp-for="TicketType" required>
+                        <option value="">Seçiniz</option>
+                        <option value="Erken Kayıt">Erken Kayıt</option>
+                        <option value="Normal">Normal</option>
+                    </select>
+                    <span asp-validation-for="TicketType" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="numberOfTickets" class="form-label">Bilet Sayısı</label>
+                    <input type="number" class="form-control" id="numberOfTickets" name="NumberOfTickets" asp-for="NumberOfTickets" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="additionalRequest" class="form-label">Ek Talep</label>
+                    <textarea class="form-control" id="additionalRequest" name="AdditionalRequest" asp-for="AdditionalRequest"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Güncelle</button>
+                <a href="/Ticket/TicketList" class="btn btn-secondary">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>

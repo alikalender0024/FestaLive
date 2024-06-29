@@ -16,8 +16,33 @@ namespace FestaLive.WebUI.Controllers
         [HttpPost]
         public IActionResult BuyTicket(Ticket ticket)
         {
-                _ticketService.Add(ticket);
-                return RedirectToAction("Index", "Default");
+            _ticketService.Add(ticket);
+            return RedirectToAction("Index", "Default");
+        }
+        public IActionResult TicketList()
+        {
+            var result = _ticketService.GetAll().Data;
+            return View(result);
+        }
+
+        public IActionResult UpdateTicket(int id)
+        {
+            var ticket = _ticketService.GetById(id).Data;
+            return View(ticket);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateTicket(Ticket ticket)
+        {
+            _ticketService.Update(ticket);
+            return RedirectToAction("TicketList");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteTicket(int id)
+        {
+            _ticketService.Delete(id);
+            return RedirectToAction("TicketList");
         }
     }
 }
