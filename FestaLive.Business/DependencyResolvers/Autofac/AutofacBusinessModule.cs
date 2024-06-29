@@ -45,6 +45,9 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
             builder.RegisterType<TicketManager>().As<ITicketService>().SingleInstance();
             builder.RegisterType<EfTicketDal>().As<ITicketDal>().SingleInstance();
 
+            builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
+            builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
+
         }
     }
 }

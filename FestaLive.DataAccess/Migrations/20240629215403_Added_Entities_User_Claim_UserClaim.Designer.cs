@@ -4,6 +4,7 @@ using FestaLive.DataAccess.Concrete.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FestaLive.DataAccess.Migrations
 {
     [DbContext(typeof(FestaLiveContext))]
-    partial class FestaLiveContextModelSnapshot : ModelSnapshot
+    [Migration("20240629215403_Added_Entities_User_Claim_UserClaim")]
+    partial class Added_Entities_User_Claim_UserClaim
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

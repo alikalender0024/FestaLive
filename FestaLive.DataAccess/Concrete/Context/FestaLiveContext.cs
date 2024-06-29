@@ -1,4 +1,5 @@
-﻿using FestaLive.Entities.Concrete;
+﻿using FestaLive.Core.Entities.Concrete;
+using FestaLive.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,9 @@ namespace FestaLive.DataAccess.Concrete.Context
         public DbSet<Plan> Plans { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<User>  Users { get; set; }
+        public DbSet<OperationClaim>  OperationClaims { get; set; }
+        public DbSet<UserOperationClaim>  UserOperationClaims { get; set; }
     }
 
 }
