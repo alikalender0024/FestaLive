@@ -5,56 +5,68 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-
 <section class="ticket-section section-padding">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 col-12 mx-auto">
-                <h2 class="text-center mb-4">Bilet Al</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-12">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">
+                            <span class="highlight">Bilet Al</span>
+                        </h2>
 
-                <form method="post" asp-action="BuyTicket">
-                    <div class="mb-3">
-                        <label for="fullName" class="form-label">Ad Soyad</label>
-                        <input type="text" class="form-control" id="fullName" name="FullName" required>
-                        <span asp-validation-for="FullName" class="text-danger"></span>
+                        <form method="post" asp-action="BuyTicket">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Ad Soyad</label>
+                                <input type="text" class="form-control" id="fullName" name="FullName" placeholder="Adınızı ve Soyadınızı girin" required>
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-posta Adresi</label>
+                                <input type="email" class="form-control" id="email" name="Email" placeholder="E-posta adresinizi girin" required>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefon Numarası</label>
+                                <input type="text" class="form-control" id="phone" name="Phone" placeholder="Telefon numaranızı girin">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="ticketType" class="form-label">Bilet Türü</label>
+                                <select class="form-control" id="ticketType" name="TicketType" required>
+                                    <option value="" disabled selected>Seçiniz</option>
+                                    <option value="Erken Kayıt">Erken Kayıt</option>
+                                    <option value="Normal">Normal</option>
+                                </select>
+                                <span asp-validation-for="TicketType" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="numberOfTickets" class="form-label">Bilet Adedi</label>
+                                <input type="number" class="form-control" id="numberOfTickets" name="NumberOfTickets" min="1" placeholder="Bilet adedini girin" required>
+                                <span asp-validation-for="NumberOfTickets" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="additionalRequest" class="form-label">Ekstra Talep</label>
+                                <textarea class="form-control" id="additionalRequest" name="AdditionalRequest" rows="3" placeholder="Ekstra taleplerinizi buraya yazabilirsiniz"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-warning w-100">Bilet Satın Al</button>
+                        </form>
                     </div>
-
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-posta Adresi</label>
-                        <input type="email" class="form-control" id="email" name="Email" required>
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Telefon Numarası</label>
-                        <input type="text" class="form-control" id="phone" name="Phone">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="ticketType" class="form-label">Bilet Türü</label>
-                        <select class="form-control" id="ticketType" name="TicketType" required>
-                            <option value="">Seçiniz</option>
-                            <option value="Erken Kayıt">Erken Kayıt</option>
-                            <option value="Normal">Normal</option>
-                        </select>
-                        <span asp-validation-for="TicketType" class="text-danger"></span>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="numberOfTickets" class="form-label">Bilet Adedi</label>
-                        <input type="number" class="form-control" id="numberOfTickets" name="NumberOfTickets" min="1" required>
-                        <span asp-validation-for="NumberOfTickets" class="text-danger"></span>
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="additionalRequest" class="form-label">Ekstra Talep</label>
-                        <textarea class="form-control" id="additionalRequest" name="additionalRequest" rows="3"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Bilet Satın Al</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    .highlight {
+        color: #ff6600; /* Turuncu renk */
+        font-weight: bold; /* Kalın yazı */
+        text-shadow: 2px 2px #ddd; /* Hafif gölge efekti */
+    }
+</style>

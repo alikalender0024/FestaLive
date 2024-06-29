@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Festava Live - Bootstrap 5 CSS Template</title>
+    <title>FestaLive</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,12 +26,12 @@
 
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="/Default/Index">
+                    <a class="navbar-brand" href="/Default/Index" style="color: black;">
                         FestaLive
                     </a>
 
                     <!-- Mobil cihazlarda görünen bilet al butonu -->
-                    <a href="@Url.Action("Buy", "Ticket")" class="btn custom-btn d-lg-none ms-auto me-4">Bilet Al</a>
+                    <a href="@Url.Action("Buy", "Ticket")" class="btn custom-btn d-lg-none ms-auto me-4" style="color: black;">Bilet Al</a>
 
                     <!-- Navbar toggler button -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -43,27 +43,27 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Ana Sayfa</a>
+                                <a class="nav-link click-scroll" href="/Default/Index/#section_1" style="color: black;">Ana Sayfa</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">Hakkında</a>
+                                <a class="nav-link click-scroll" href="/Default/Index/#section_2" style="color: black;">Hakkında</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">Sanatçılar</a>
+                                <a class="nav-link click-scroll" href="/Default/Index/#section_3" style="color: black;">Sanatçılar</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_4">Program</a>
+                                <a class="nav-link click-scroll" href="/Default/Index/#section_4" style="color: black;">Program</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_5">Fiyatlandırma</a>
+                                <a class="nav-link click-scroll" href="/Default/Index/#section_5" style="color: black;">Fiyatlandırma</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_6">İletişim</a>
+                                <a class="nav-link click-scroll" href="/Default/Index/#section_6" style="color: black;">İletişim</a>
                             </li>
                         </ul>
 
@@ -85,47 +85,13 @@
         <div class="site-footer-top">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-6 col-12 mx-auto text-center">
                         <h2 class="text-white mb-lg-0">FestaLive</h2>
-                    </div>
-
-                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
-                        <ul class="social-icon d-flex justify-content-lg-end">
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-twitter"></span>
-                                </a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-apple"></span>
-                                </a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-instagram"></span>
-                                </a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-youtube"></span>
-                                </a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-pinterest"></span>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <div class="container">
             <div class="row">
@@ -139,23 +105,23 @@
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Hakkımızda</a>
+                            <a href="/Default/Index/#section_2" class="site-footer-link">Hakkımızda</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Sanatçılar</a>
+                            <a href="/Default/Index/#section_3" class="site-footer-link">Sanatçılar</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Program</a>
+                            <a href="/Default/Index/#section_4" class="site-footer-link">Program</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Fiyatlandırma</a>
+                            <a href="/Default/Index/#section_5" class="site-footer-link">Fiyatlandırma</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">İletişim</a>
+                            <a href="/Default/Index/#section_6" class="site-footer-link">İletişim</a>
                         </li>
                     </ul>
                 </div>
@@ -197,4 +163,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="~/festalive/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
