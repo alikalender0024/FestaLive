@@ -13,5 +13,6 @@ namespace FestaLive.Entities.Concrete
         public string Title { get; set; }
         public string Time { get; set; }
         public string Artist { get; set; }
+        public DateTime EventDate { get; set; }
     }
 }
