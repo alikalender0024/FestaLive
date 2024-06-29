@@ -1,0 +1,64 @@
+﻿@model Feature
+
+@{
+    ViewData["Title"] = "Yeni Öne Çıkan Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin Paneli</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Yeni Öne Çıkan Ekle</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                    <a href="/Feature/FeatureList" class="btn btn-sm btn-primary">Öne Çıkan Listesi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-0">Yeni Öne Çıkan Ekle</h3>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="CreateFeature">
+                <div class="form-group">
+                    <label for="Title">Başlık</label>
+                    <input type="text" class="form-control" id="Title" name="Title" required />
+                </div>
+                <div class="form-group">
+                    <label for="Subtitle">Alt Başlık</label>
+                    <input type="text" class="form-control" id="Subtitle" name="Subtitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="StartDate">Başlangıç Tarihi</label>
+                    <input type="date" class="form-control" id="StartDate" name="StartDate" required />
+                </div>
+                <div class="form-group">
+                    <label for="EndDate">Bitiş Tarihi</label>
+                    <input type="date" class="form-control" id="EndDate" name="EndDate" required />
+                </div>
+                <div class="form-group">
+                    <label for="Location">Konum</label>
+                    <input type="text" class="form-control" id="Location" name="Location" required />
+                </div>
+                <div class="form-group">
+                    <label for="ImageUrl">Resim URL</label>
+                    <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" />
+                </div>
+                <button type="submit" class="btn btn-success">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
