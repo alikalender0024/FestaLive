@@ -1,0 +1,38 @@
+﻿@model FestaLive.Entities.Concrete.SocialMedia
+@{
+    ViewData["Title"] = "Sosyal Medya Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Sosyal Medya Güncelle</h1>
+
+<div class="container-fluid mt--6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-0">Sosyal Medya Bilgileri</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label for="platformName" class="form-label">Platform Adı</label>
+                    <input type="text" class="form-control" id="platformName" name="PlatformName" asp-for="PlatformName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="iconUrl" class="form-label">İkon URL</label>
+                    <input type="text" class="form-control" id="iconUrl" name="IconUrl" asp-for="IconUrl" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="url" class="form-label">URL</label>
+                    <input type="text" class="form-control" id="url" name="Url" asp-for="Url" required>
+                </div>
+
+                <button type="submit" class="btn btn-success">Güncelle</button>
+                <a href="/SocialMedia/SocialMediaList" class="btn btn-secondary">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
