@@ -5,6 +5,15 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
+<style>
+    .table td {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
         <div class="header-body">
@@ -73,6 +82,7 @@
                 <div class="mt-4">
                     <a href="/About/CreateAbout" class="btn btn-success">Yeni Hakkımda Ekle</a>
                 </div>
+            </div>
         </div>
     </div>
 </div>
