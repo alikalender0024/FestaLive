@@ -30,11 +30,20 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
             builder.RegisterType<EventManager>().As<IEventService>().SingleInstance();
             builder.RegisterType<EfEventDal>().As<IEventDal>().SingleInstance();
 
+            builder.RegisterType<FeatureManager>().As<IFeatureService>().SingleInstance();
+            builder.RegisterType<EfFeatureDal>().As<IFeatureDal>().SingleInstance();
+
             builder.RegisterType<FooterManager>().As<IFooterService>().SingleInstance();
             builder.RegisterType<EfFooterDal>().As<IFooterDal>().SingleInstance();
 
             builder.RegisterType<PlanManager>().As<IPlanService>().SingleInstance();
             builder.RegisterType<EfPlanDal>().As<IPlanDal>().SingleInstance();
+
+            builder.RegisterType<SocialMediaManager>().As<ISocialMediaService>().SingleInstance();
+            builder.RegisterType<EfSocialMediaDal>().As<ISocialMediaDal>().SingleInstance();
+
+            builder.RegisterType<TicketManager>().As<ITicketService>().SingleInstance();
+            builder.RegisterType<EfTicketDal>().As<ITicketDal>().SingleInstance();
 
         }
     }

@@ -15,6 +15,6 @@ namespace FestaLive.Entities.Concrete
         public string Phone { get; set; }
         public string TicketType { get; set; }
         public int NumberOfTickets { get; set; }
-        public string PhoneAdditionalRequest { get; set; }
+        public string AdditionalRequest { get; set; }
     }
 }
