@@ -6,6 +6,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using FestaLive.Core.Utilities.Security.Jwt;
 using FestaLive.Core.Utilities.Security.Encryption;
+using FestaLive.Core.DependencyResolvers;
+using FestaLive.Core.Utilities.IoC;
 
 var host = CreateHostBuilder(args).Build();
 
@@ -77,7 +79,10 @@ static IHostBuilder CreateHostBuilder(string[] args) => Host.CreateDefaultBuilde
                     IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                 };
             });
-
+        services.AddDependencyResolvers(new ICoreModule[]
+        {
+            new CoreModule()
+        });
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
     });
