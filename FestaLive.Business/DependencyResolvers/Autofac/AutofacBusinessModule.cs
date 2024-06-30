@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using FestaLive.Business.Abstract;
 using FestaLive.Business.Concrete;
+using FestaLive.Core.Utilities.Security.Jwt;
 using FestaLive.DataAccess.Abstract;
 using FestaLive.DataAccess.Concrete.EntityFramework;
 using System;
@@ -20,6 +21,9 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
 
             builder.RegisterType<ArtistManager>().As<IArtistService>().SingleInstance();
             builder.RegisterType<EfArtistDal>().As<IArtistDal>().SingleInstance();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
 
             builder.RegisterType<CalendarManager>().As<ICalendarService>().SingleInstance();
             builder.RegisterType<EfCalendarDal>().As<ICalendarDal>().SingleInstance();

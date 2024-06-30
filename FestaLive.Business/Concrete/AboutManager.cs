@@ -1,4 +1,5 @@
 ﻿using FestaLive.Business.Abstract;
+using FestaLive.Business.BusinessAspect;
 using FestaLive.Business.Constants.Messages;
 using FestaLive.Core.Utilities.Results;
 using FestaLive.DataAccess.Abstract;
@@ -25,7 +26,7 @@ namespace FestaLive.Business.Concrete
             return new SuccessResult(AboutMessages.AboutDeletedSuccessfully); 
 
         }
-
+        [SecuredOperation("Product.GetList,Admin")]
         public IDataResult<List<About>> GetAll()
         {
             var abouts = _aboutDal.GetAll();
