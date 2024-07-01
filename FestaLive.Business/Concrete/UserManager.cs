@@ -1,5 +1,9 @@
 ﻿using FestaLive.Business.Abstract;
 using FestaLive.Business.Constants.Messages;
+using FestaLive.Business.ValidationRules.FluentValidation;
+using FestaLive.Core.Aspects.Autofac.Logging;
+using FestaLive.Core.Aspects.Autofac.Validation;
+using FestaLive.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using FestaLive.Core.Entities.Concrete;
 using FestaLive.Core.Utilities.Results;
 using FestaLive.DataAccess.Abstract;
@@ -11,9 +15,11 @@ using System.Threading.Tasks;
 
 namespace FestaLive.Business.Concrete
 {
+    [LogAspect(typeof(FileLogger))]
     public class UserManager(IUserDal userDal) : IUserService
     {
         private readonly IUserDal _userDal = userDal;
+        [ValidationAspect(typeof(UserValidator))]
         public IResult Add(User user)
         {
             _userDal.Add(user);

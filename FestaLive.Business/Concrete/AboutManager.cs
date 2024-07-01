@@ -1,6 +1,10 @@
 ﻿using FestaLive.Business.Abstract;
 using FestaLive.Business.BusinessAspect;
 using FestaLive.Business.Constants.Messages;
+using FestaLive.Business.ValidationRules.FluentValidation;
+using FestaLive.Core.Aspects.Autofac.Logging;
+using FestaLive.Core.Aspects.Autofac.Validation;
+using FestaLive.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using FestaLive.Core.Utilities.Results;
 using FestaLive.DataAccess.Abstract;
 using FestaLive.Entities.Concrete;
@@ -9,10 +13,11 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
+    [LogAspect(typeof(FileLogger))]
     public class AboutManager(IAboutDal aboutDal) : IAboutService
     {
         private readonly IAboutDal _aboutDal = aboutDal;
-
+        [ValidationAspect(typeof(AboutValidator))]
         public IResult Add(About about)
         {
             _aboutDal.Add(about);
@@ -23,7 +28,7 @@ namespace FestaLive.Business.Concrete
         {
             var deletedAbout = GetById(aboutId);
             _aboutDal.Delete(deletedAbout.Data);
-            return new SuccessResult(AboutMessages.AboutDeletedSuccessfully); 
+            return new SuccessResult(AboutMessages.AboutDeletedSuccessfully);
 
         }
         [SecuredOperation("Product.GetList,Admin")]

@@ -1,5 +1,9 @@
 ﻿using FestaLive.Business.Abstract;
 using FestaLive.Business.Constants.Messages;
+using FestaLive.Business.ValidationRules.FluentValidation;
+using FestaLive.Core.Aspects.Autofac.Logging;
+using FestaLive.Core.Aspects.Autofac.Validation;
+using FestaLive.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using FestaLive.Core.Utilities.Results;
 using FestaLive.DataAccess.Abstract;
 using FestaLive.Entities.Concrete;
@@ -8,10 +12,12 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
+    [LogAspect(typeof(FileLogger))]
     public class ArtistManager(IArtistDal artistDal) : IArtistService
     {
         private readonly IArtistDal _artistDal = artistDal;
 
+        [ValidationAspect(typeof(ArtistValidator))]
         public IResult Add(Artist artist)
         {
             _artistDal.Add(artist);

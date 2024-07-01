@@ -1,5 +1,7 @@
 ﻿using FestaLive.Business.Abstract;
 using FestaLive.Business.Constants.Messages;
+using FestaLive.Core.Aspects.Autofac.Logging;
+using FestaLive.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using FestaLive.Core.Entities.Concrete;
 using FestaLive.Core.Utilities.Results;
 using FestaLive.Core.Utilities.Security.Hashing;
@@ -13,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace FestaLive.Business.Concrete
 {
+    [LogAspect(typeof(FileLogger))]
     public class AuthManager(IUserService userService, ITokenHelper tokenHelper) : IAuthService
     {
         private readonly IUserService _userService = userService;
