@@ -1,21 +1,14 @@
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) [2024] [Muhammed Ali KALENDER]
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Bu yazılımın ve ilişkili belgelendirme dosyalarının (birlikte "Yazılım" olarak anılacaktır) herhangi bir kişi tarafından edinilmesine ilişkin izin, ücretsiz olarak ve herhangi bir sınırlama olmaksızın sağlanmaktadır. Yazılımı kullanma, kopyalama, değiştirme, birleştirme, yayınlama, dağıtma, alt lisanslama ve/veya satma hakkına sahip olmakla birlikte, Yazılımı alan kişilere Yazılım'ı bu koşullar altında sunma yetkisi de verilmektedir:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Yukarıdaki telif hakkı bildirimi ve bu izin bildirimi, Yazılım'ın tüm kopyalarında veya önemli bölümlerinde yer almalıdır.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+YAZILIM "OLDUĞU GİBİ" SAĞLANMAKTA OLUP, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL ETMEME GARANTİSİ DAHİL ANCAK BUNUNLA SINIRLI OLMAMAK ÜZERE HERHANGİ BİR TÜRDE GARANTİ VERİLMEMEKTEDİR. HİÇBİR DURUMDA YAZARLAR VEYA TELİF HAKKI SAHİPLERİ, YAZILIMIN KULLANIMINDAN KAYNAKLANAN, SÖZLEŞME, HAKARET VEYA DİĞER DURUMLARDAN KAYNAKLANAN HERHANGİ BİR TALEP, HASAR VEYA DİĞER YÜKÜMLÜLÜK İÇİN SORUMLU TUTULAMAZ.
+
+
+
+
+
