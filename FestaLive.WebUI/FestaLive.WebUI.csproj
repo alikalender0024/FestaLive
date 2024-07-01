@@ -15,7 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FestaLive.Business\FestaLive.Business.csproj" />
     <ProjectReference Include="..\FestaLive.WebAPI\FestaLive.WebAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="log4.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

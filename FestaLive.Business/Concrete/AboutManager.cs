@@ -13,6 +13,7 @@ using System.Collections.Generic;
 
 namespace FestaLive.Business.Concrete
 {
+    [LogAspect(typeof(DatabaseLogger))]
     [LogAspect(typeof(FileLogger))]
     public class AboutManager(IAboutDal aboutDal) : IAboutService
     {
@@ -31,7 +32,7 @@ namespace FestaLive.Business.Concrete
             return new SuccessResult(AboutMessages.AboutDeletedSuccessfully);
 
         }
-        [SecuredOperation("Product.GetList,Admin")]
+       // [SecuredOperation("About.List,Admin")]
         public IDataResult<List<About>> GetAll()
         {
             var abouts = _aboutDal.GetAll();

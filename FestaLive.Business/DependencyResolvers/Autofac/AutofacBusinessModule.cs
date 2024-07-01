@@ -1,6 +1,9 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
+using Castle.DynamicProxy;
 using FestaLive.Business.Abstract;
 using FestaLive.Business.Concrete;
+using FestaLive.Core.Utilities.Interceptors.Autofac;
 using FestaLive.Core.Utilities.Security.Jwt;
 using FestaLive.DataAccess.Abstract;
 using FestaLive.DataAccess.Concrete.EntityFramework;
@@ -52,6 +55,12 @@ namespace FestaLive.Business.DependencyResolvers.Autofac
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
 
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector= new AspectInterceptorSelector()
+                }).SingleInstance();
         }
     }
 }

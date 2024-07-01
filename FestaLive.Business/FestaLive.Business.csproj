@@ -1,19 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<BaseOutputPath></BaseOutputPath>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Autofac" Version="8.0.0" />
-    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="8.0.0" />
+		<PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FestaLive.DataAccess\FestaLive.DataAccess.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\FestaLive.DataAccess\FestaLive.DataAccess.csproj" />
+	</ItemGroup>
 
 </Project>

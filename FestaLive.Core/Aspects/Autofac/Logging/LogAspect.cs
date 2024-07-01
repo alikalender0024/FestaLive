@@ -1,4 +1,5 @@
 ﻿using Castle.DynamicProxy;
+using Core.CrossCuttingConcerns.Logging.Log4Net;
 using FestaLive.Core.CrossCuttingConcerns.Logging.Log4Net;
 using FestaLive.Core.Logging;
 using FestaLive.Core.Utilities.Interceptors.Autofac;
